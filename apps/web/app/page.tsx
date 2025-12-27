@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { TopBar } from '@/components/layout/top-bar';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { HeroCalculator } from '@/components/calculator/hero-calculator';
@@ -31,12 +30,16 @@ export default function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-24">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Side - Content */}
+            <div className="flex justify-center lg:justify-start  ">
+              <HeroCalculator />
+            </div>
+
             <div className="text-white">
-              {/* <div className="mb-6">
+              <div className="mb-6">
                 <span className="text-lg md:text-xl text-blue-400 font-medium">
-                  Smart Loans For <span className="text-blue-300 font-semibold">Bright Futures</span>
+                  Plan smarter. Save more interest. <span className="text-blue-300 font-semibold">Decide with clarity.</span>
                 </span>
-              </div> */}
+              </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-center md:text-left pt-4 md:pt-0 mb-0 md:mb-6">
                 EMI Calculator &
                 <br />
@@ -72,9 +75,6 @@ export default function Home() {
             </div>
 
             {/* Right Side - Calculator Widget */}
-            <div className="flex justify-center lg:justify-end">
-              <HeroCalculator />
-            </div>
           </div>
         </div>
 

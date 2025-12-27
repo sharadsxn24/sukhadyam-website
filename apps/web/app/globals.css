@@ -12,3 +12,56 @@
     overflow-x: hidden;
   }
 }
+
+/* Floating animation for money notes */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-40px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-20px) rotate(-5deg);
+  }
+}
+
+/* Flying animation for currency notes - Left to Right */
+@keyframes flyRight {
+  0% {
+    transform: translateX(0) translateY(0) rotate(var(--rotation, 0deg));
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.2;
+  }
+  95% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(calc(100vw + 200px)) translateY(var(--end-y, 0)) rotate(var(--rotation, 0deg));
+    opacity: 0;
+  }
+}
+
+/* Flying animation for currency notes - Right to Left */
+@keyframes flyLeft {
+  0% {
+    transform: translateX(0) translateY(0) rotate(var(--rotation, 0deg));
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.2;
+  }
+  95% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(calc(-100vw - 200px)) translateY(var(--end-y, 0)) rotate(var(--rotation, 0deg));
+    opacity: 0;
+  }
+}

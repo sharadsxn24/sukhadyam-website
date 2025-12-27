@@ -30,13 +30,13 @@ export function HeroCalculator() {
   const tenureOptions = [5, 10, 20, 30];
 
   return (
-    <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 w-full max-w-lg">
+    <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 w-full max-w-2xl">
       <h3 className="text-2xl font-bold text-gray-900 mb-6">How Much Do You Need?</h3>
 
       {/* Loan Amount Slider */}
       <div className="mb-8">
         <div className="flex items-end gap-3 mb-4">
-          <div className="max-w-[160px]">
+          <div className="max-w-[200px] w-full">
             <label className="block text-sm text-gray-500 mb-1.5">Amount</label>
             <div className="relative flex items-center">
               <input
@@ -49,10 +49,10 @@ export function HeroCalculator() {
                   const value = Math.max(0, Math.min(20000000, Number(e.target.value) || 0));
                   setLoanAmount(value);
                 }}
-                className="w-full pl-7 pr-3 py-2 text-base font-bold border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none text-right"
+                className="w-full pl-7 pr-3 py-2 text-2xl font-bold border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none text-left"
                 placeholder="Amount"
               />
-              <span className="absolute left-3 text-base text-gray-500 pointer-events-none font-semibold">₹</span>
+              <span className="absolute left-3 text-lg text-gray-500 pointer-events-none font-semibold">₹</span>
             </div>
           </div>
           <div className="flex flex-wrap gap-2 flex-1">
@@ -119,10 +119,10 @@ export function HeroCalculator() {
                   const value = Math.max(5, Math.min(20, Number(e.target.value) || 5));
                   setInterestRate(value);
                 }}
-                className="w-full pl-3 pr-7 py-2 text-base font-bold border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none text-right"
+                className="w-full pl-3 pr-7 py-2 text-2xl font-bold border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none text-left"
                 placeholder="Rate"
               />
-              <span className="absolute right-3 text-base text-gray-500 pointer-events-none font-semibold">%</span>
+              <span className="absolute right-3 text-lg text-gray-500 pointer-events-none font-semibold">%</span>
             </div>
           </div>
           <div className="text-xs text-gray-500 flex-1 pb-2">per annum</div>
@@ -177,7 +177,7 @@ export function HeroCalculator() {
                   const value = Math.max(1, Math.min(max, Number(e.target.value) || 1));
                   setLoanTenure(value);
                 }}
-                className="w-full px-3 pr-20 py-2 text-base font-bold border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none text-right"
+                className="w-full px-3 pr-20 py-2 text-2xl font-bold border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none text-left"
                 placeholder={tenureUnit === 'months' ? 'Months' : 'Years'}
               />
               {/* Toggle buttons inside input field */}
@@ -285,12 +285,12 @@ export function HeroCalculator() {
           <span className="text-gray-600 font-medium">Pay Monthly</span>
           <span className="text-2xl font-bold text-gray-900">{formatCurrency(calculations.emi)}</span>
         </div>
-        <div className="flex justify-between items-center">
+        {/* <div className="flex justify-between items-center">
           <span className="text-gray-600 font-medium">Term of Use</span>
           <span className="text-lg font-semibold text-gray-900">
             {loanTenure} {tenureUnit === 'months' ? 'Months' : 'Years'}
           </span>
-        </div>
+        </div> */}
         <div className="flex justify-between items-center">
           <span className="text-gray-600 font-medium">Total Pay Back Amount</span>
           <span className="text-2xl font-bold text-blue-600">{formatCurrency(calculations.totalAmount)}</span>
