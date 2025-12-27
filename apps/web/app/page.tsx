@@ -7,11 +7,11 @@ import { HeroCalculator } from '@/components/calculator/hero-calculator';
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <TopBar />
+      {/* <TopBar /> */}
       <Header />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-[90vh] flex items-center overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-[80vh] flex items-center overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.3),transparent_50%)]"></div>
@@ -19,33 +19,33 @@ export default function Home() {
         </div>
 
         {/* Slider Indicators */}
-        <div className="absolute left-8 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col space-y-4">
+        {/* <div className="absolute left-8 top-1/2 -translate-y-1/2 z-10 hidden lg:flex flex-col space-y-4">
           {[1, 2, 3].map((num) => (
             <div key={num} className="flex items-center space-x-3">
               <div className={`w-2 h-2 rounded-full ${num === 1 ? 'bg-blue-500 w-8' : 'bg-gray-600'}`}></div>
               <span className={`text-sm font-medium ${num === 1 ? 'text-blue-400' : 'text-gray-500'}`}>{String(num).padStart(2, '0')}</span>
             </div>
           ))}
-        </div>
+        </div> */}
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-24">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Side - Content */}
             <div className="text-white">
-              <div className="mb-6">
+              {/* <div className="mb-6">
                 <span className="text-lg md:text-xl text-blue-400 font-medium">
                   Smart Loans For <span className="text-blue-300 font-semibold">Bright Futures</span>
                 </span>
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
-                Smart Finance Solutions
+              </div> */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-center md:text-left pt-4 md:pt-0 mb-0 md:mb-6">
+                Simple EMI Planning
                 <br />
-                For Your Business
+                for Smarter Loan Decisions
               </h1>
-              <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl leading-relaxed">
-                Calculate EMI, interest, and repayment schedule for home, car, and personal loans — instantly and free. Designed for Indian loans, salaries, and banks.
+              <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl leading-relaxed hidden md:block">
+                Calculate your EMI, total interest, and repayment schedule for home, car, and personal loans — free and instant.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 mb-8 hidden md:flex">
                 <Link
                   href="/services"
                   className="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-lg">

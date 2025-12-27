@@ -25,10 +25,18 @@ export function TopBar() {
           {/* Right - Links & Social */}
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-4">
-              <Link href="/login" className="hover:text-white transition-colors">Log In</Link>
-              <Link href="/career" className="hover:text-white transition-colors">Career</Link>
-              <Link href="/media" className="hover:text-white transition-colors">Media</Link>
-              <Link href="/faq" className="hover:text-white transition-colors">FAQ&apos;s</Link>
+              <Link href="/login" className="hover:text-white transition-colors">
+                Log In
+              </Link>
+              <Link href="/career" className="hover:text-white transition-colors">
+                Career
+              </Link>
+              <Link href="/media" className="hover:text-white transition-colors">
+                Media
+              </Link>
+              <Link href="/faq" className="hover:text-white transition-colors">
+                FAQ&apos;s
+              </Link>
             </div>
             <div className="flex items-center space-x-3 border-l border-gray-700 pl-4">
               <a href="#" className="hover:text-white transition-colors" aria-label="Facebook">
@@ -58,4 +66,3 @@ export function TopBar() {
     </div>
   );
 }
-

@@ -37,7 +37,7 @@ export function HeroCalculator() {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 w-full max-w-md">
+    <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 w-full max-w-lg">
       <h3 className="text-2xl font-bold text-gray-900 mb-6">How Much Do You Need?</h3>
 
       {/* Loan Amount Slider */}
@@ -48,11 +48,8 @@ export function HeroCalculator() {
               key={option.value}
               onClick={() => setLoanAmount(option.value)}
               className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all ${
-                loanAmount === option.value
-                  ? 'bg-blue-600 text-white shadow-lg scale-105'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
-            >
+                loanAmount === option.value ? 'bg-blue-600 text-white shadow-lg scale-105' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}>
               {option.label}
             </button>
           ))}
@@ -82,9 +79,7 @@ export function HeroCalculator() {
 
       {/* Interest Rate */}
       <div className="mb-8">
-        <label className="block text-sm font-semibold text-gray-700 mb-3">
-          Interest Rate: {interestRate}% per annum
-        </label>
+        <label className="block text-sm font-semibold text-gray-700 mb-3">Interest Rate: {interestRate}% per annum</label>
         <div className="relative">
           <input
             type="range"
@@ -113,11 +108,8 @@ export function HeroCalculator() {
               key={years}
               onClick={() => setLoanTenure(years)}
               className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all ${
-                loanTenure === years
-                  ? 'bg-blue-600 text-white shadow-lg scale-105'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
-            >
+                loanTenure === years ? 'bg-blue-600 text-white shadow-lg scale-105' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}>
               {years} {years === 1 ? 'Year' : 'Years'}
             </button>
           ))}
@@ -161,8 +153,7 @@ export function HeroCalculator() {
       {/* CTA Button */}
       <Link
         href="/emi-calculator"
-        className="w-full inline-flex items-center justify-center px-6 py-4 text-base font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-      >
+        className="w-full inline-flex items-center justify-center px-6 py-4 text-base font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
         <span>CALCULATE EMI</span>
         <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -171,4 +162,3 @@ export function HeroCalculator() {
     </div>
   );
 }
-
