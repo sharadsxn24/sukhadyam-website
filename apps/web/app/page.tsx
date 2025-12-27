@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-[80vh] flex items-center overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-900 via-blue-800 to-indigo-800 min-h-[80vh] flex items-center overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.3),transparent_50%)]"></div>
@@ -38,9 +38,9 @@ export default function Home() {
                 </span>
               </div> */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-center md:text-left pt-4 md:pt-0 mb-0 md:mb-6">
-                Simple EMI Planning
+                EMI Calculator &
                 <br />
-                for Smarter Loan Decisions
+                Smart Loan Planning
               </h1>
               <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl leading-relaxed hidden md:block">
                 Calculate your EMI, total interest, and repayment schedule for home, car, and personal loans — free and instant.
@@ -49,7 +49,7 @@ export default function Home() {
                 <Link
                   href="/services"
                   className="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-blue-600 bg-white rounded-lg hover:bg-gray-50 transition-all duration-300 hover:scale-105 shadow-lg">
-                  <span>OUR SERVICES</span>
+                  <span></span>
                   <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -60,10 +60,10 @@ export default function Home() {
                 <Link
                   href="/emi-calculator"
                   className="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white rounded-lg hover:bg-white/10 transition-all duration-300 hover:scale-105">
-                  <span>GET STARTED</span>
-                  <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span>How EMI Works</span>
+                  {/* <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
+                  </svg> */}
                   <svg className="ml-1 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
