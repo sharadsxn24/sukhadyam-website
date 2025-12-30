@@ -3,7 +3,7 @@ import { StickyCta } from '@/components/dabba/sticky-cta';
 
 export default function Home() {
   return (
-    <div className="min-h-screen pb-10" style={{ backgroundColor: '#184b96' }}>
+    <div className="min-h-screen pb-20" style={{ backgroundColor: '#184b96' }}>
       {/* Hero Section */}
       <section className="pt-8 pb-8 px-4">
         <div className="max-w-md mx-auto text-center">
