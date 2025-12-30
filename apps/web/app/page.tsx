@@ -3,12 +3,12 @@ import { StickyCta } from '@/components/dabba/sticky-cta';
 
 export default function Home() {
   return (
-    <div className="min-h-screen pb-10" style={{ backgroundColor: '#1a4789' }}>
+    <div className="min-h-screen pb-10" style={{ backgroundColor: '#184b96' }}>
       {/* Hero Section */}
       <section className="pt-8 pb-8 px-4">
         <div className="max-w-md mx-auto text-center">
           <img src="/images/sukhadyam-logo.png" alt="Sukhadyam" style={{ height: 80, width: 'auto', margin: '0 auto' }} />
-          <div className="flex items-center justify-center text-white mt-4 mb-1">introducing</div>
+          <div className="flex items-center justify-center text-lg text-gray-300 mt-4 mb-1">introducing</div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             <span className="text-yellow-300 uppercase dabba-cursive">Office Dabba</span>
           </h1>
@@ -27,7 +27,7 @@ export default function Home() {
         <div className="max-w-md mx-auto">
           <h2 className="text-2xl font-bold text-yellow-300 mb-6 text-center">How Office Dabba Works</h2>
           <div className="space-y-6">
-            <div className="bg-blue-900 text-white rounded-xl p-5 border border-yellow-300 border-dashed">
+            <div className="text-white rounded-xl p-5 border border-yellow-300 border-dashed" style={{ backgroundColor: '#033276' }}>
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-yellow-300 text-blue-900 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
                 <div>
@@ -37,7 +37,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-blue-900 text-white rounded-xl p-5 border border-yellow-300 border-dashed">
+            <div className="text-white rounded-xl p-5 border border-yellow-300 border-dashed" style={{ backgroundColor: '#033276' }}>
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-yellow-300 text-blue-900 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
                 <div>
@@ -47,7 +47,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-blue-900 text-white rounded-xl p-5 border border-yellow-300 border-dashed">
+            <div className="text-white rounded-xl p-5 border border-yellow-300 border-dashed" style={{ backgroundColor: '#033276' }}>
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-yellow-300 text-blue-900 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
                 <div>
@@ -60,16 +60,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-8 px-4">
-        <div className="max-w-md mx-auto text-center">
-          <Link href="/kal-ka-dabba" className="text-orange-600 hover:text-orange-700 font-semibold text-lg">
-            Kal ka Dabba dekho 👀
-          </Link>
-        </div>
-      </section>
-
-      <StickyCta href="/dabba" label="Order Aaj Ka Dabba" />
+      <StickyCta href="/office-dabba" label="Order Office Dabba" />
     </div>
   );
 }
