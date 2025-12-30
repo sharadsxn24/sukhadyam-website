@@ -23,6 +23,13 @@
   }
 }
 
+/* Cursive font for Dabba */
+.dabba-cursive {
+  font-family: var(--font-limelight), 'Brush Script MT', 'Lucida Handwriting', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Floating animation for money notes */
 @keyframes float {
   0%,

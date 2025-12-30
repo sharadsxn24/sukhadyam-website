@@ -1,30 +1,32 @@
 import Link from 'next/link';
 import { StickyCta } from '@/components/dabba/sticky-cta';
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 pb-20">
+    <div className="min-h-screen pb-10" style={{ backgroundColor: '#1a4789' }}>
       {/* Hero Section */}
-      <section className="pt-12 pb-8 px-4">
+      <section className="pt-8 pb-8 px-4">
         <div className="max-w-md mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">It&apos;s Dabba Time 😋</h1>
-          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+          <img src="/images/sukhadyam-logo.png" alt="Sukhadyam" style={{ height: 80, width: 'auto', margin: '0 auto' }} />
+          <div className="flex items-center justify-center text-white mt-4 mb-1">introducing</div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <span className="text-yellow-300 uppercase dabba-cursive">Dabba</span>
+          </h1>
+          <p className="text-lg text-gray-300 leading-relaxed">
             Everyday meals for workdays.
             <br />
-            Order by <span className="font-semibold text-orange-600">12:30 PM</span>.
+            Order by <span className="font-semibold text-yellow-300">12:30 PM</span>.
             <br />
-            Delivered <span className="font-semibold text-orange-600">1–3 PM</span>.
+            Delivered <span className="font-semibold text-yellow-300">1–3 PM</span>.
           </p>
-          <Link href="/dabba" className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg transition-colors">
-            Order Aaj Ka Dabba
-          </Link>
         </div>
       </section>
 
       {/* How Dabba Works */}
-      <section className="py-12 px-4">
+      <section className="pt-0 pb-12 px-4">
         <div className="max-w-md mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">How Dabba Works</h2>
+          <h2 className="text-2xl font-bold text-yellow-300 mb-6 text-center">How Dabba Works</h2>
           <div className="space-y-6">
             <div className="bg-white rounded-xl p-5 shadow-sm">
               <div className="flex items-start gap-4">
