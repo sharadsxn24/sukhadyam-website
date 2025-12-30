@@ -157,7 +157,7 @@ export default function DabbaPage() {
     );
   }
 
-  const isOrderingClosed = status && !status.isOrderingOpen;
+  const isOrderingClosed = status ? !status.isOrderingOpen : false;
   const totalItems = getTotalItems();
   const totalAmount = getTotalAmount();
 
