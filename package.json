@@ -1,5 +1,5 @@
 {
-  "name": "emiplanner",
+  "name": "sukhadyam",
   "private": true,
   "scripts": {
     "build": "turbo run build",
