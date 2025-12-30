@@ -19,7 +19,7 @@ const limelight = Limelight({
 });
 
 export const metadata: Metadata = {
-  title: 'Dabba by Sukhadyam - Office ka Apna Dabba',
+  title: 'Office Dabba by Sukhadyam - Apka Apna Dabba',
   description: 'Everyday meals for workdays. Order by 12:30 PM. Delivered 1–3 PM. Simple, reliable, sorted.',
 };
 

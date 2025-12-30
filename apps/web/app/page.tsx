@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { StickyCta } from '@/components/dabba/sticky-cta';
-import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -11,7 +10,7 @@ export default function Home() {
           <img src="/images/sukhadyam-logo.png" alt="Sukhadyam" style={{ height: 80, width: 'auto', margin: '0 auto' }} />
           <div className="flex items-center justify-center text-white mt-4 mb-1">introducing</div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            <span className="text-yellow-300 uppercase dabba-cursive">Dabba</span>
+            <span className="text-yellow-300 uppercase dabba-cursive">Office Dabba</span>
           </h1>
           <p className="text-lg text-gray-300 leading-relaxed">
             Everyday meals for workdays.
@@ -26,7 +25,7 @@ export default function Home() {
       {/* How Dabba Works */}
       <section className="pt-0 pb-12 px-4">
         <div className="max-w-md mx-auto">
-          <h2 className="text-2xl font-bold text-yellow-300 mb-6 text-center">How Dabba Works</h2>
+          <h2 className="text-2xl font-bold text-yellow-300 mb-6 text-center">How Office Dabba Works</h2>
           <div className="space-y-6">
             <div className="bg-blue-900 text-white rounded-xl p-5 border border-yellow-300 border-dashed">
               <div className="flex items-start gap-4">
