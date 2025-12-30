@@ -28,32 +28,32 @@ export default function Home() {
         <div className="max-w-md mx-auto">
           <h2 className="text-2xl font-bold text-yellow-300 mb-6 text-center">How Dabba Works</h2>
           <div className="space-y-6">
-            <div className="bg-white rounded-xl p-5 shadow-sm">
+            <div className="bg-blue-900 text-white rounded-xl p-5 border border-yellow-300 border-dashed">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
+                <div className="w-10 h-10 bg-yellow-300 text-blue-900 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
                 <div>
                   <h3 className="font-bold text-lg mb-1">Check Today&apos;s Menu</h3>
-                  <p className="text-gray-600 text-sm">Fresh rotating menu every day. No customisation, just simple, homely food.</p>
+                  <p className="text-gray-300 text-sm">Fresh rotating menu every day. No customisation, just simple, homely food.</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-5 shadow-sm">
+            <div className="bg-blue-900 text-white rounded-xl p-5 border border-yellow-300 border-dashed">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
+                <div className="w-10 h-10 bg-yellow-300 text-blue-900 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
                 <div>
                   <h3 className="font-bold text-lg mb-1">Order by 12:30 PM</h3>
-                  <p className="text-gray-600 text-sm">Place your order before the cut-off. Orders close strictly at 12:30 PM.</p>
+                  <p className="text-gray-300 text-sm">Place your order before the cut-off. Orders close strictly at 12:30 PM.</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-5 shadow-sm">
+            <div className="bg-blue-900 text-white rounded-xl p-5 border border-yellow-300 border-dashed">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
+                <div className="w-10 h-10 bg-yellow-300 text-blue-900 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
                 <div>
                   <h3 className="font-bold text-lg mb-1">Get Your Dabba</h3>
-                  <p className="text-gray-600 text-sm">Delivered fresh to your office between 1–3 PM. Simple, reliable, sorted.</p>
+                  <p className="text-gray-300 text-sm">Delivered fresh to your office between 1–3 PM. Simple, reliable, sorted.</p>
                 </div>
               </div>
             </div>
