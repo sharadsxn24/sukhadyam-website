@@ -4,14 +4,14 @@ A mobile-first food ordering system for office-goers. Simple, reliable, everyday
 
 ## 🏗️ Architecture
 
-### Backend (NestJS)
-- **Location**: `apps/api`
-- **Port**: 3001 (default)
+### Backend (Next.js API Routes + Cloudflare D1)
+- **Location**: `apps/web/app/api`
+- **Database**: Cloudflare D1 (SQLite)
 - **APIs**:
-  - `GET /dabba/today` - Today's menu with items
-  - `GET /dabba/tomorrow` - Tomorrow's menu teaser (theme only)
-  - `GET /dabba/status` - Ordering window status
-  - `POST /dabba/orders` - Create new order
+  - `GET /api/dabba/today` - Today's menu with items
+  - `GET /api/dabba/tomorrow` - Tomorrow's menu teaser (theme only)
+  - `GET /api/dabba/status` - Ordering window status
+  - `POST /api/dabba/orders` - Create new order
 
 ### Frontend (Next.js)
 - **Location**: `apps/web`
@@ -28,133 +28,81 @@ A mobile-first food ordering system for office-goers. Simple, reliable, everyday
 ### Prerequisites
 - Node.js >= 18
 - pnpm 9.0.0
+- Cloudflare account (for D1 database)
 
-### Backend Setup
-
-```bash
-cd apps/api
-pnpm install
-pnpm dev
-```
-
-Backend will run on `http://localhost:3001`
-
-### Frontend Setup
+### Setup
 
 ```bash
-cd apps/web
+# Install dependencies
 pnpm install
+
+# Run development server
 pnpm dev
 ```
 
 Frontend will run on `http://localhost:3000`
 
-### Environment Variables
+## 🗄️ Database Setup (Cloudflare D1)
 
-Create `.env.local` in `apps/web`:
+### Create D1 Database
 
-```env
-NEXT_PUBLIC_API_URL=http://localhost:3001
+```bash
+cd apps/web
+pnpm exec wrangler d1 create office_dabba_db
 ```
 
-## 📋 Core Features
+Update `wrangler.toml` with your database ID.
 
-### Ordering Window
-- **Menu visible**: 11:00 AM - 12:30 PM
-- **Orders close**: Strictly at 12:30 PM
-- **Delivery**: 1:00 PM - 3:00 PM
+### Run Migrations
 
-### Backend Validation
-- Backend is the **single source of truth** for time
-- Orders are rejected if placed after 12:30 PM
-- Menu availability is checked server-side
-
-### Order Rules
-- Max 4 items per order
-- No customisation
-- Items may have quantity limits
-
-## 🎨 Design Principles
-
-- **Mobile-first**: Optimized for 360-430px screens
-- **Warm colors**: Orange, amber, yellow palette
-- **Hinglish tone**: Friendly, cute, trustworthy
-- **Minimal**: No hype, just simple food ordering
-
-## 📦 Database Models
-
-Currently using in-memory storage. In production, replace with:
-- PostgreSQL
-- MongoDB
-- Or your preferred database
-
-Models:
-- `DabbaMenu` - Daily menu
-- `DabbaItem` - Menu items
-- `DabbaOrder` - Customer orders
-
-## 🔧 Development
-
-### Backend Structure
-```
-apps/api/src/
-├── dabba-menu/
-│   ├── entities/
-│   ├── dabba-menu.controller.ts
-│   ├── dabba-menu.service.ts
-│   └── dabba-menu.module.ts
-├── dabba-order/
-│   ├── entities/
-│   ├── dto/
-│   ├── dabba-order.controller.ts
-│   ├── dabba-order.service.ts
-│   └── dabba-order.module.ts
-└── app.module.ts
+```bash
+cd apps/web
+pnpm exec wrangler d1 migrations apply office_dabba_db --local
 ```
 
-### Frontend Structure
+### Seed Data
+
+```bash
+cd apps/web
+pnpm exec wrangler d1 execute office_dabba_db --local --file=./db/seed.sql
+```
+
+## 📁 Project Structure
+
 ```
 apps/web/
 ├── app/
-│   ├── page.tsx (Home)
-│   ├── dabba/page.tsx
-│   ├── kal-ka-dabba/page.tsx
-│   ├── how-dabba-works/page.tsx
-│   └── contact/page.tsx
-├── components/dabba/
-│   ├── sticky-cta.tsx
-│   └── menu-item-card.tsx
-└── lib/
-    ├── api/dabba.ts
-    └── utils/time.ts
+│   ├── api/              # Next.js API routes (automatically handled by Cloudflare Pages)
+│   │   └── dabba/
+│   ├── dabba/            # Ordering page
+│   ├── kal-ka-dabba/     # Tomorrow's teaser
+│   ├── how-dabba-works/  # How it works page
+│   └── contact/          # Contact page
+├── components/           # React components
+├── lib/
+│   ├── api/              # API client
+│   ├── dabba-menu/       # Menu service & entities
+│   ├── dabba-order/      # Order service & entities
+│   └── database/         # D1 database service
+└── wrangler.toml         # Cloudflare Workers/Pages config
 ```
 
-## 🚫 Not Included
+## 🚢 Deployment
 
-- Login/signup
-- Payment gateway
-- Admin UI
-- User accounts
+### Cloudflare Pages
+
+1. Connect your repository to Cloudflare Pages
+2. Set build command: `pnpm build`
+3. Set output directory: `apps/web/.next`
+4. Configure D1 database binding in Cloudflare dashboard
+5. Deploy!
+
+The API routes in `app/api/` are automatically converted to Cloudflare Workers functions.
 
 ## 📝 Notes
 
-- Backend time validation is critical - never trust client time
-- Menu data is seeded in `DabbaMenuService.seedData()`
-- In production, add proper database and admin panel
-- CORS is enabled for localhost:3000 by default
-
-## 🎯 Production Checklist
-
-- [ ] Replace in-memory storage with database
-- [ ] Add environment-specific configs
-- [ ] Set up proper CORS for production domain
-- [ ] Add error logging and monitoring
-- [ ] Implement admin panel for menu management
-- [ ] Add order tracking
-- [ ] Set up SMS/WhatsApp notifications
-- [ ] Add analytics
-
----
-
-**Office ka apna Dabba — roz ka, reliable, sorted.** 😊
-
+- **Ordering Window**: 11:00 AM - 12:30 PM (enforced by backend)
+- **Delivery Window**: 1:00 PM - 3:00 PM
+- **Max Items**: 4 items per order
+- **No Customization**: Fixed daily menu, no modifications
+- **Server Time**: Frontend relies on backend for time-based logic

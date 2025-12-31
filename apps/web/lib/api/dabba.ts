@@ -3,7 +3,8 @@
  * Handles all API calls to the backend
  */
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+// Use Next.js API routes (automatically handled by Cloudflare Pages)
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '/api';
 
 export interface DabbaMenu {
   id: string;

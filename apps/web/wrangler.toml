@@ -1,0 +1,8 @@
+name = "office_dabba_web"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = ".next"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "office_dabba_db"
+database_id = "edc8a38c-2da2-4ce7-847e-76b6c0618e21"
